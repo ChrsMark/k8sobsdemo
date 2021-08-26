@@ -1,4 +1,3 @@
-"""Code for a flask API to Create, Read, Update, Delete users"""
 import os
 import sys
 import psutil
@@ -15,7 +14,7 @@ def index():
 
 @app.route("/demo")
 def add_user():
-    """Function to return the host's cpu"""
+    """Function to simulate CPU heavy task that will fail if not enough is available"""
     psutil.PROCFS_PATH = '/hostfs/proc'
     cpu = psutil.cpu_percent()
     if cpu < 60:
