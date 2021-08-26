@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stress
+  labels:
+    env: demo
+spec:
+  containers:
+  - name: stress
+    image: chrismark/stress:v1.0.0
+  nodeSelector:
+    kubernetes.io/hostname: gke-chrismark-elasticon-default-pool-d8304c2d-thhk
